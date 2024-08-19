@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      // if 조건문
+      // 불 표현식의 값을 true 면 중괄호 안의문장을 실행하고 false 면 문장을무시
+
+      // if(불 값이 나오는표현식) {
+      //   불값이 참일 때 실행할 문장
+      // }
+
+      // new 는 객체를 만드는 거 
+
+      // 객체가 가지고 있는건 매서드
+
+
+      const date = new Date()
+      const hour = date.getHours()
+
+      if(hour<12){
+        alert('오전입니다.');
+      }
+      if(hour>12){
+        alert('오후입니다')
+      }
+
+      // else 를 사용하면 편함
+      // if else 문       
+      if(hour<12){
+        alert('오전입니다.');
+      } else {
+        alert('오후입니다')
+      }
+
+  </script>
+
+</head>
+<body>
+    
+</body>
+</html>
