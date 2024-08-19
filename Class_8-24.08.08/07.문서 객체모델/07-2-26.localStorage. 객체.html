@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 웹 브라우저에 데이터를 저장하는 localStorage 객체와 활용
+        //     1. localStorage.getItem(키): 저정된 갑을 추출. 없으면 undefined가 나옴  
+        //                                 객체의 속성을추출하는 일반적인 형태로 localStorage. 키 또는 localStorage[키] 형태로 사용할수도 있음
+        //     2....
+
+        document.addEventListener('DOMContentLoaded',()=>{
+
+            const p =document.querySelector('p')
+            const input =document.querySelector('input')
+            const Button = document.querySelector('button')
+
+            const savedValue = localStorage.getItem('input')
+            // localStorage.input도 가능합니다.
+
+            if(savedValue){
+                input.value = savedValue
+                p.textContent = `이전 실행 때의 마지막 값: ${savedValue}`
+            }
+
+            input.addEventListener('keyup', (event)=>{
+                const value = event.currentTarget.value
+                localStorage.setItem('input', value)
+                //localStorage.input = value 도 가능합니다.
+            })
+
+                // 지우기가 안돼... 찾아보기 왜안되지?
+            button.addEventListener('click',(event)=>{ 
+                localStorage.clear()
+                input.value = ''
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <p></p>
+    <button>지우기</button>
+    <input type="text">
+</body>
+</html>

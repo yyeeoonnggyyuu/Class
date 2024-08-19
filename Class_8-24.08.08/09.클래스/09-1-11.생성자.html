@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        class Student{ 
+            constructor(이름, 국어, 영어, 수학, 과학){
+                this.이름 = 이름
+                this.국어 = 국어
+                this.영어 = 영어
+                this.수학 = 수학
+                this.과학 = 과학
+            }
+            // this 이해하기 
+            // - 생성자의 갯수 객체의 갯수 맞춰주기 , 으로 구분
+            // - 구름이를 이번에 새로 생성한 constructor의 이름에 넣고 싶다.
+            // - this는 나자신을 의미 여기서 this의 의미는 new sudent를 의미
+            //     const student의 구름을 class 의 constructor의이름에 넣고 this.이름에 대입
+            // -현재 생성하고 있는 자기 자신 을 this라 함
+
+        }
+        const students =[]
+            students.push(new Student('구름', 87, 98, 88, 90))
+            students.push(new Student('별이', 92, 98, 96, 88))
+            students.push(new Student('겨울', 76, 96, 94, 86))
+            students.push(new Student('바다', 98, 52, 98, 92))
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

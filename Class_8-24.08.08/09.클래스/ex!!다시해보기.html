@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person {
+            constructor(name, age){
+                this.name = name
+                this.age = age
+                
+            }
+          
+        }
+
+        // 이걸 배열에 넣고 출력을 for로 돌려서 자동으로 1 2 3  json으로 나오게 하기 
+        const person1 = new Person('jone',30)
+        const person2 = new Person('d',12)
+        const person3 = new Person('d',12)
+      
+
+        console.log(JSON.stringify(person1,null,2))
+        console.log(JSON.stringify(person2,null,2))
+        console.log(JSON.stringify(person3,null,2))
+      
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    //     예외 객체 (exception object): try catch 구문을 사용할 때 catch의 괄호 안에 입력하는 식별자.. 
+    //                                     아무 식별자나 입력해도 괜찮지만 일밙거으로 e나 exception이라는 식별자를 사용
+
+    // try {
+    // }catch(exception){
+
+    // }
+
+
+    try{
+        const array = new Array(9999999999999999)
+    }catch(exception){
+        console.log(exception)
+        console.log()
+        console.log(`예외 이름: ${exception.name}`)
+        console.log(`예외 메세지: ${exception.message}`)
+    }
+
+
+    // 이렇게 뜸
+    // RangeError: Invalid array length
+    // at 08-2-01.예외객체 (exception object ).html:19:23  -> """08-2-01 파일이름 , html:19:23 줄번호"""
+    // ---------------------------
+    // 예외 이름: RangeError
+    // ---------------------------
+    // 예외 메세지: Invalid array length
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

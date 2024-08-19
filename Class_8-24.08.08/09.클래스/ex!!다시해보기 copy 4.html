@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // https://chan-co.tistory.com/m/23 이거 인데 
+        class Student {
+            constructor(이름, 국어, 영어, 수학){
+                this.이름 = 이름
+                this.국어 = 국어
+                this.영어 = 영어
+                this.수학 = 수학
+            }
+            getSum(){
+                return this.국어 + this.영어 + this.수학
+            }
+            getAverage(){
+                return getSum() / 3
+            }
+            toString(){
+                return `${this.이름}\t${this.국어}점\t${this.영어}점\t${this.수학}\n`
+            }
+
+           
+        }
+
+        
+        const students = []
+            students.push(new Student('철수',92,81,82))
+            students.push(new Student('영희',72,95,100))
+            students.push(new Student('민혁',80,86,89))
+
+           
+        // // conslos.log(`철수의 총점은 ${s.getSum()}점 이고 평균은 ${s.getAverage()} 입니다.`)
+        //     let output = '이름\t국어\t영어\t수학\n'
+        //     let ouput1 = '철수'
+        // for (const s of students ){
+        //     output += s.toString()
+        //     output1 += s.getSum()
+        // }
+        // console.log(output)
+        // console.log(output1)
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

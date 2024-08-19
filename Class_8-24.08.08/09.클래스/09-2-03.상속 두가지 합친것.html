@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        
+        class Rectangle{
+            constructor(width,height){
+                this.width = width
+                this.height = height
+            }
+
+            //사각형의 둘레를 구하는 메소드
+            getPerimeter(){
+                return 2*(this.width + this.height)
+            }
+            getArea(){
+                return this.width * this.height
+            }
+        }
+        // 정사각형 클래스 ( extends 와 constructor과 super를 사용)
+        // extends 는 클래스 상속을 할 때 쓰는 키워드
+        // super 자식클래스에서 부모클래스를 호출할 때 사용하는 식별자
+       // # 은 외부에서 접근할 수 없는 속성을 만들 때 사용
+        class Square extends Rectangle {
+            constructor (length){
+                super(length, length)
+            }
+        }
+        const square = new Square(20,50)
+        console.log(`정사각형의 둘레: ${square.getPerimeter()}`)
+        console.log(`정사각형의 넓이: ${square.getArea()}`)
+        
+    </script>
+</head>
+<body>
+    class 를 만든다 constructor 생성자 객체를 만든다
+</body>
+</html>

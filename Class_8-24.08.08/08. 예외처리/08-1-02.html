@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    
+        // try catch finally 구문을 사용해서 예외 처림
+
+        // try{
+        //     //예외가 발생할 가능성이 있는 코드
+        // }catch(exception){
+        //     //예외가 발생했을 때 실행할코드
+        // }finally{
+        //     //무조건 실행할 코드
+        // }
+
+
+        try{
+            //예외가 발생할 가능성이 있는 코드
+            willExcept.byeBye(
+                console.log("try 구문의 마지막 줄")
+            )
+        }catch(exception){
+            //예외가 발생했을 때 실행할코드
+            console.log("catch 구문의 마지막 줄")
+            
+        }finally{
+            //무조건 실행할 코드
+            console.log("finally 구문의 마지막 줄")
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

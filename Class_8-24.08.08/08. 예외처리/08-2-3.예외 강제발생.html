@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 예외 강제발생 키워드 throw 
+        // //단순하게 예외를 발생시킵니다.
+        // throw 문자열
+        // //조금 더 자세하게 예외발생
+        // throw new Error(문자열)
+
+
+        function divide(a,b){
+            if ( b === 0){
+                throw '0으로는 나눌 수 없습니다.'
+            }
+            return a/b
+        }
+        console.log(divide(10,2))
+        console.log(divide(10,0))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+</html>

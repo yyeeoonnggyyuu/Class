@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    //    1. 클래스 Rectangle 만들고
+    //    2. constructor 이용해서 너비 높이 값 받아오기
+    //    3. 둘레 및 넓이 구하는 공식
+        // 4. class extends constructor super 이용
+    //    3. 출력
+
+    class Rectangle{
+            constructor(width,height){
+                this.width = width
+                this.height = height
+            }
+        getPerimeter(){
+                return 2*(this.width + this.height)
+            }
+            getArea(){
+                return this.width * this.height
+            }
+       }
+       
+       class Square extends Rectangle {
+            constructor (length){
+                super(length, length)
+            }
+        }
+       const square = new Square(10,20)
+       console.log(`사각형의 둘레:${square.getPerimeter()}`)
+        console.log(`사각형의 넓이:${square.getArea()}`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

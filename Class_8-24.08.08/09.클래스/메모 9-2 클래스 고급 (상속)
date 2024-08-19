@@ -1,0 +1,9 @@
+
+
+
+Rectangle이라는 사각형을 나타내느 클래스를선언하고 사용하는 예
+Rectangle 클래스
+
+getPerimeter 사각형의 둘레는 구하는 메소드
+
+

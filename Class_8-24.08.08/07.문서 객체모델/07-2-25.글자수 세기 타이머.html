@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 타이머로 구현한 남은글자 수 세기
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            const textarea = document.querySelector('textarea')
+            const h1 = document.querySelector('h1')
+
+            let timerld
+            
+            textarea.addEventListener('focus', (event)=>{ //입력양식 활성화
+                timerld = setInterval(()=>{
+                    const length = textarea.value.length
+                    h1.textContent = `글자 수 : ${length}`
+                }, 50)  // 0.5초마다 글자수를 체크해주는 타이머
+            })
+            textarea.addEventListener('blur',(event)=>{ //입력양식 비활성화
+                clearInterval(timerld)
+            })
+        })
+        
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <textarea name="" id=""></textarea>
+</body>
+
+</html>
