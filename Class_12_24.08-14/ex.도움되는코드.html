@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../JQuery/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <!-- or -->
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <header id="main-header">
+        <div class="header-search-form">
+            <form>
+                <input type="search" class="input-search">
+                <input type="submit" class="input-search-submit" value="검색">
+            </form>
+        </div>
+        <h1 class="header-title">Interest</h1>
+        <div class="header-menu">
+            <ul class="outer-menu">
+                <li>
+                    <a href="#">정보</a>
+                    <ul class="inner-menu">
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="outer-menu">
+                <li>
+                    <a href="#">사용자</a>
+                    <ul class="inner-menu">
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <nav id="main-navigation">
+        <ul>
+            <li><a href="#">Following</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Everything</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Gift</a></li>
+        </ul>
+    </nav>
+    <section id="main-section">
+
+    </section>
+
+    <div id="darken-background">
+        <div id="lightbox">
+            <div class="user-ingormation">
+                <a href="#" class="user-information-image">
+                    <img src="http://placehold.it/70x70x" alt="">
+                </a>
+                <div class="user-information-text">
+                    <h3>User</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <hr class="lightbox-splitter">
+            <img class = "lightbox">
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        //풀다운 메뉴
+        $('.outer-menu').hover(function () {
+            $(this).find('.inner-menu').css('display', 'block');
+        }, function () {
+            $(this).find('.inner-menu').css('display', 'none');
+        });
+    });
+
+    $(document).ready(function () {
+        //이미지 로드 확인
+        $('#main-section').imagesLoaded(function () {
+            //jQuery Masonry 플러그인 적용
+            $('#main-section').masonry({
+                itemSelector: '.paper',
+                columnWidth: 230,
+                isAnimated: true
+            })
+        })
+    })
+
+    $(document).ready(function () {
+        const $mainSection = $("#main-section");
+
+        for (let i = 1; i <= 40; i++) {
+            const $paper = $(`
+            
+            <div class="paper">
+        <div class="paper-holder">
+            <a><img class='rect'></a>
+
+            </div>
+        <p class="paper-description">Lorem ipsum dolor sit amet</p>
+        <div class="paper-content">
+        <a href="#" class="peper-link">
+            <img src="http://via.placeholder.com/30x30" alt="">
+        </a>
+            <p class="paper-text">A comple024-059Z-debug-0.log</p>
+        
+    </div>
+    </div>
+    `);
+            $mainSection.append($paper);
+        }
+        const rects = document.querySelectorAll('.rect');
+        rects.forEach((rect, index) => {
+            const src = `https://picsum.photos/190/260?random=${index + 1}`;
+            rect.setAttribute('src', src);
+            rect.setAttribute('height', 260);
+        });
+        $('.rect').on('click', function() {
+        const src = $(this).attr('src'); // 클릭된 이미지의 src 가져오기
+        console.log(src);
+
+        lightbox = document.querySelector('.lightbox');
+        lightbox.setAttribute('src',src);
+        $darkenBackground.show(); // lightbox 보여주기
+    });
+    })
+
+
+    $(document).ready(function () {
+        function showLightBox() {
+            $('#darken-background').show();
+            $('#darken-background').css('top', $(window).scrollTop());
+            //스크롤을 못하게합니다.
+            $('body').css('overflow', 'hidden');
+        }
+        function hideLightBox() {
+            //라이트박스를 보이지 않게 합니다.
+            $('#darken-background').hide();
+
+            //스크롤을 하게 합니다.
+            $('body').css('overflow', '');
+        }
+        //라이트박스 제거 이벤트
+        $('#darken-background').click(function () {
+            hideLightBox();
+        })
+
+        $('.paper').click(function () {
+
+            showLightBox();
+        });
+        //라이트 박스 제거 이벤트 보조
+        $('#lightbox').click(function (event) {
+            event.stopPropagation();
+        })
+    })
+
+</script>
+<script src="masonry.pkgd.min.js"></script>
+<script src="../JQuery/jquery-lightbox-master/js/jquery.lightbox.min.js"></script>
+
+</html>

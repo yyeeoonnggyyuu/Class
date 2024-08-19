@@ -1,0 +1,210 @@
+
+/* 초기화 */
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "Malgun Gotic", Arial, sans-serif;
+    }
+    a {text-decoration: none;}
+    img {border: 0; }
+    li {list-style: none;}
+    html { background:  #f7f5f5;}
+
+/* 헤더 */
+    #main-header {
+        height: 40px;
+        background: #faf7f7;
+        position: relative; /* 엄마한테 relative */ 
+    
+    }
+    .header-search-form { float:left;}
+    .header-menu{ float: right;}
+    .header-title{
+        position: absolute; /* 자식한테는 absolute */ 
+        width: 200px; height: 40px;
+        left: 50%; margin-left: -100px; /* 이걸로 위치 조정 50% 센터값정도 */
+        background: url('logo.png');
+        background-repeat: no-repeat;
+        text-indent: -9999px; /* 기존에 있던 글씨(interest)는 안보이는 곳까지 넣는 의미 -9999는 */
+        /* interest 텍스트를 넣는 이유는 나중에 확인시 확인이 빠름*/
+    }
+    
+/* 폴다운 */
+    .outer-menu{
+        float: left;
+        width: 100px; height: 20px;
+        line-height: 20px;
+        padding: 10px 0;
+        position: relative;
+        text-align: center;
+
+        font-size: 13px;
+        font-weight: bold;
+
+        z-index: 9999; /* z-index 값을 9999를 주면 먼저 보이게 해놓음  */
+    }
+    .outer-menu:hover { background: #E1DFDF;}
+    .inner-menu{
+        display: none; /*기본적으로 안보이게하고 색상도 흰색 */
+        background: #FFFFFF;
+        margin-top: 10px;
+        width: 100%;
+        border-top: 1px solid #cccaca;
+        box-shadow: 0 2px 4px rgba(34, 25, 25, 0.5); /*  새도우효과 그림자효과 줌 rgba 에 a 값을 주면 효과를 더줌*/ 
+    }
+    .inner-menu a{
+        display: block;
+        padding: 5px 10px;
+        z-index: 5000; /* 위의 outer-menu와 겹쳤을 경우는 안보이게 5000을 줌 */
+    }
+    .inner-menu a:hover { background: #E1DFDF;}
+
+/* 내비게이션 메뉴 */
+    #main-navigation{
+        height: 30px;
+        background: #faF7F7; /* 선그어주기 */ 
+        border-top:  1px solid #cfcaca;
+        box-shadow: 1px 3px 3px rgba(34, 25, 25, 0.4);
+    }
+    #main-navigation > ul { 
+        overflow: hidden; /* 범위가 넘어가면 안보이게*/
+        text-align: center;
+    }
+    #main-navigation > ul > li {
+        display: inline;
+        padding: 0 5px;/* 옆으로 조정하기 위해서 padding값 */
+        line-height: 30px;
+        font-size: 13px;
+        color: #524D4D;
+        text-shadow: 0 1px 1px white;
+    }
+    #main-navigation > ul >li:hover{
+        background: #E1DFDF;
+        border-radius: 2px;
+    }
+/* 검색양식 */
+    .header-search-form{
+        height: 26px;
+        padding: 7px;
+    }
+    .input-search {
+        display: block;
+        float: left;
+        background-color: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        border-radius: 15px 0 0 15px; /*  왼쪽만둥글게 깍음*/ 
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); /* inset 그림자효과가 텍스트 안쪽으로 형성됨*/
+        width: 120px; height: 24px;
+        padding: 0 0 0 10px;
+        font-size: 12px;
+        color: #555555;
+    }
+    .input-search:focus { /*선택될경우 파란색 */
+        border-color: rgba(82, 168, 236, 0.8);
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    }
+    .input-search-submit {
+        display: block;
+        float: left;
+        width: 50px; height: 26px;
+        border-radius: 0 15px 15px 0; /*  오른쪽만둥글게 깍음*/ 
+        border: 1px solid #CCCCCC;
+        margin-left:  -1px;
+        vertical-align: top;
+        display: inline-block;
+    }
+
+/* 종이 스타일 */
+    .paper {
+
+        float: left;
+
+
+        width: 190px;
+        margin-top: 10px; /* 위아래 간격을위해 맞춤*/
+        padding: 15px 15px 0;
+        font-size: 11px;
+        background: #FFFFFF;
+        box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    }
+
+    .paper-content{
+        margin: 0 -15px;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background:  #F2F0F0;
+        overflow: hidden; /* 제목이 길어지면 히든*/
+    }
+
+    .paper-description{
+        margin: 10px 0;
+    }
+    .paper-link{
+        display: block;
+        float: left;
+    }
+
+    .paper-text{
+        float: left;
+        width: 150px;
+        margin-left: 10px;
+    }
+
+    /* 섹션 */
+    /*미디어 쿼리를 지원하지아는 앱브라우저를 위해서 넣어주는 섹션 웹과 앱에 동시사용하기 위해서*/
+    #main-section{
+        width: 920px;
+        margin: 0 auto;
+    }
+    /* 세 줄  */
+    @media ( max-width: 919px){
+        #main-section {width: 690px;}
+    }
+     /* 네 줄 */
+   
+    @media (min-width: 930px) and (max-width: 1149px){
+            #main-section {width: 920px;}
+    }
+     /* 다섯 줄 */
+    @media (min-width: 1150px) and (max-width: 1379px){
+        #main-section {width: 1150px;}
+    }
+     /* 여섯 줄 */
+     @media ( min-width: 1380px){
+        #main-section {width: 1380px;}
+    }
+/* 라이트박스 */
+    #darken-background {
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 100%;
+
+        display: none;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 10000;
+        overflow-y: scroll;
+    }
+
+    #lightbox {
+        width: 700px;
+        margin: 20px auto; padding: 15px;
+
+        border: 1px solid #333333;
+        border-radius: 5px;
+        background: white;/* 안쪽에 흰색넣어야 인화사진처럼보임*/
+        box-shadow: 0 5px 5px rgba(34, 25, 25, 0.4);
+        text-align: center;
+    }
+
+    .user-information { overflow: hidden; text-align: left;}
+    .user-information-image {float: left; width: 70px;}
+    .user-information-text {float: right; width: 620px;}
+    .lightbox-splitter {margin: 10px 0;}
+
+
+
+
+
+
+
