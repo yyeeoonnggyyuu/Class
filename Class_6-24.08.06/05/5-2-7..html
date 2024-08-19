@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 화살표 함수
+        // 화살표 함수는 function 키워드 대신 화살표(=>)를 사용하며 , 다음고 ㅏ같은 형태로 생성하는 간단한 함수
+        // (매개변수)=>{
+
+        // }불 표현식 || 불표현식이 거짓일 때 실행할 문장
+        // (매개변수)=>리턴값
+
+
+        let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        numbers // . 을 써서 연속콜백함수 생성
+        .filter((value) => value % 2 ===0) // .filter true 값만 쓰자
+        .map((value) => value *value)  // .map 앞에 filter 롤 뽑은것을 다시 배열
+        .forEach((value)=>{ // .forEach 는 다시 실행
+            console.log(value)
+        })
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // prototype
+
+        //  객체 자료형 이름.prototype.메소드 이름 - function(){
+
+        //  }
+        //  prototype 객체에 속성과 메소드를 추가하면 모든객체(와 기본 자료형)에서 해당 속성과 메소드를 사용할 수 있음
+
+         Number.prototype.power =function(n=2){
+            return this.valueOf()**n
+         }
+
+         const a =12
+         console.log('a.power():',a.power())
+         console.log('a.power(3):',a.power(3))
+         console.log('a.power(4):',a.power(4))
+
+
+
+
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

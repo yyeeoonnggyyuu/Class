@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 타이머 함수
+        // 특정 시간마다 또는 특정 시간 이후에 콜백 함수를 호출할 수 있는 타이머 (timer)함수
+        // 함수이름 : 설명
+        // setTimeout(함수,시간) : 특정시간후에 함수를 한번호출
+        // setInterval(함수,시간) : 특정 시간마다 함수를 호출
+        // 타이머 함수는 많이 쓰니 꼭 외우기
+
+        //1* 1000 = 1초
+
+        setTimeout(()=>{
+            console.log('1초 후에 실행됩니다.')
+        },1*1000)  //1* 1000 = 1초 괄호안에 1*1000 이 들어가는거 유의
+
+        let count = 0
+        setInterval(()=>{
+            console.log(`1초마다 실행됩니다(${count}번째)`)
+            count++
+        }, 1*1000)
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

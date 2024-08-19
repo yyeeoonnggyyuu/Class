@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+        <script>
+        //   이러한 조건문을활용해서 객체의 기본속성을지정하는 경우도 많음
+        //   다음은 객체의 속성이 잇는지 확인하고 있다면 해당속성을 ,없다면 별도의 문자열을 지정하는 코드
+
+
+          const object = {
+            name:'혼자 공부한는 파이썬',
+            price:18000,
+            publisher:'한빛미디어'
+          }
+
+            //객체의 기본속성을 지정합니다.
+            object.name = object.name !== undefined ? object.name :'제목미정'
+            object.author = object.author !== undefined ? object.author : '저자 미상'
+
+            //객체를 출력합니다
+            console.log(JSON.stringify(object, null, 2))
+
+            // 마찬가지로 속성이 false로 변환될 수 잇는 값이 들어오지 않을 것이라는전제가 있으면 짧은 조건문으로도 구현
+
+            object.name = object.name || '제목미정'
+            object.author = object.author || '저자 미상'
+
+            // && || 이거를 확실히 알면 이 배열을 쉽게 이용가능하며 엄청 긴 코드는 짧게 가능
+            </script> 
+    
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 타이머 함수
+        // 타이머를 종료하고 싶을 때는clearTimeout()함수와 clearInterval()함수를 사용
+        // clearTimeout(타이머_ID) : clearTimeout() 함수로 설정한 타이머를 제거
+        //clearInterval(타이머_ID) : clearInterval() 함수로 설정한 타이머를 제거
+
+        let id
+        let count = 0
+
+        id = setInterval(()=>{
+            console.log(`1초마다 실행됩니다.(${count}번째)`)
+            count++
+        }, 1*1000)
+
+        setTimeout(()=>{
+            console.log('타이머를 종료합니다.')
+            clearInterval(id)
+        }, 5*1000)
+
+        // setTimeout(()=>{
+        //     console.log('1초 후에 실행됩니다.')
+        // },1*1000)  //1* 1000 = 1초 괄호안에 1*1000 이 들어가는거 유의
+
+        // let count = 0
+        // setInterval(()=>{
+        //     console.log(`1초마다 실행됩니다(${count}번째)`)
+        //     count++
+        // }, 1*1000)
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

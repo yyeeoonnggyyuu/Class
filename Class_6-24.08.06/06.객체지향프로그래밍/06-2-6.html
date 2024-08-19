@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 프로토타입으로 
+        // indesOf() 메소드로 자바스크리브에서 문자열 내부에 어떤 문자열이 있는지, 배열내부에어떤자료가 있는지 확인
+
+
+        String.prototype.contain = function(data) {
+            return this.indexOf(data) >= 0                           
+        } // 문자열 내에 내가 찾고가 하는게 있는지 보는방법 >= 0 이라는것은 없는 문자열은 -1로 뜨기때문에 확인가능
+
+        Array.prototype.contain = function(data){
+            return this.indexOf(data) >= 0
+        }
+
+        //String 객체의 contain() 메소드를 사용합니다
+        const a ='안녕하세요'
+        console.log('안녕 in 안녕하세요:',a.contain('안녕'))
+        console.log('없는데 in 안녕하세요:',a.contain('없는데'))
+
+        //Array 객체의 contain()메소드를 사용합니다.
+        const b = [273, 32, 103, 57, 52]
+        console.log('273 in [273, 32, 103, 57, 52]:',b.contain(273))
+        console.log('0 in [273, 32, 103, 57, 52]:',b.contain(0))
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

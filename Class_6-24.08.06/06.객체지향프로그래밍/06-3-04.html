@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+        <script>
+          // 배열 기반의 다중 할당
+
+          // 최신 자바스크립트부터 배열과 비슷한 작성 방법으로 한번에 여러개의 변수에 값을 할당하는 다중 할당 기능이 추가.
+          
+
+          // [식별자,식별자,식발자,...]= 배열
+
+          // 1.할당 연산자(=) 왼쪽에 식별자(변수 또는 상수)의 배열을 넣고, 
+          //   오른쪽에 배열을 위치시키면 배열의 위치에맞게 값들이할당.
+          
+
+          //   {속성이름, 속성이름 }=객체
+          //   {식별자= 속성이름, 식별자=속성이름}= 객체
+
+
+
+          const object = {
+            name:'혼자 공부한는 파이썬',
+            price:18000,
+            publisher:'한빛미디어'
+          }
+
+          const {name, price} =object // name속성과 price 속성을 그대로 꺼냄
+          console.log('#속성 이름 그대로 꺼내서 출력하기')
+          console.log(name.price)
+          console.log('')
+
+          const {a=name, b=price} =object //name속성을 a, price 속성을 b라는 이름으로 꺼냄
+          console.log('# 다른 이름으로 꺼내서 출력하기')
+          console.log(a,b)
+          
+            </script> 
+    
+
+</head>
+<body>
+    
+</body>
+</html>

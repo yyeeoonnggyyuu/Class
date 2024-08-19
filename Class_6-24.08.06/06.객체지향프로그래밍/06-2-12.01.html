@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // JSON 객체
+        // - 인터넷에서 문자열로 데이터를 주고 받을 때는 CSV, XML, CSON 등의 다양한 자료 표현 방식을사용, 현재 가장 많이 사용되는 자료 표현 방식은 JSON 객체
+        // 1. 값을표현할 때는 문자열, 숫자 , 불자료형만 사용할 수 잇ㅇ음(함수등은 사용불가_)
+        // 2. 문자열은 반드시 큰따옴표로 만들어야함
+        // 3. 키key에도 반드시 따옴표를 붙여야함
+
+
+        // JSON>stringify() 메소드 사용해서 변환가능
+
+        //자료를 생성합니다
+        const data = [{
+            name:'혼자 공부한는 파이썬',
+            price:18000,
+            publisher:'한빛미디어'
+        },{
+            name:'HTML5 웹 프로그래밍 입문',
+            price:26000,
+            publisher:'한빛아카데미'
+        }]
+     //자료를 JSON으로 변환합니다
+        console.log(JSON.stringify(data)) // 2번째 매개변수는 객체에서 어떤 속성만 선택해서 추출하고 싶을 때 사용하나 
+                                            //거의 사용하지 않으며 ,
+                                            //일반적으로 null(아무것도 없음)을 넣음
+        console.log(JSON.stringify(data,null,2))
+                                            //들여쓰기 2칸으로 설정
+        
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>
