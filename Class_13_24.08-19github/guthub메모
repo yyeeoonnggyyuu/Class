@@ -1,0 +1,139 @@
+
+
+깃 
+
+버전 : 1.1.1 이렇게 쓴다
+
+깃, 소스트리, 깃허브
+
+git
+github.com/git/git
+
+
+Sourcetree
+
+깃허브는 원격저장소 호스팅 서비스
+git-scm.com   >  downloads  > window > 
+vim 또는 usevim 선택
+
+업로드하고자 하는 파일 선택 > open git bash here >  git 입력하면 명령어가 나오면 설치 완료
+
+$ git config --global user.name "Choi YeonGyu"
+$ git config --global user.email dusrb1234@gmail.com
+$ git config user.name  (확인용)
+$ git config user.email (확인용)
+$ git config --list
+
+yeongyu2024@gmail.com
+
+git bash 깃배시에 명령어 넣을 수 있음
+
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master   <<< master 인지 확인 필요
+user.name=Choi YeonGyu      <<< 본인이름 확인
+user.email=yeongyu2024@gmail.com <<< 이메일 확인
+
+www.sourcetree.com 설치
+
+window  >>  bitbucket은 아직 쓰지않기때문에 건너뛰기 Mercurial 도 해제하기 
+>> 이름과 이메일확인 >> Choi YeonGyu ,,, yeongyu2024@gmail.com >> SSH 키 아니오
+>>> 상단에 Create >>  경로에 내가 올리고 싶은 파일 클릭(hellocourecetree 같은) >>>
+파일 숨겨져 있음 .git 파일 있으면 성공한건데 이걸 지우면 망
+
+github.com 가입하기
+yeongyu2024@gamil.com
+비번 옵티머스19252
+
+**버전관리의 큰그림
+1.버전이 만들어지는 과정을 이해라ㅕ면 깃이 관리하는 세개의공간, 
+작업디렉터리, 스테이지, 저장소 3가지를 이해해야함
+
+작업디렉터리 : 작업공간 내가 작업한곳(로컬저장소 .git 숨김폴더가 놓여있는곳이 우리의 프로젝트공간)
+스테이지  : 변경사항이 생겨 수정된 파일들을 선별작업을 통해 추린 후 스테이지에 저장 (임시저장소)
+저장소   : 
+
+
+add (스테이지에 추가한다),
+commit : 최종 저장
+
+1.작업디렉터리 : 변경사항이 생겼다고 해서 무조건 새로운 버전을 만들 필요는 없다.
+                선별작업이 필요함
+
+
+
+
+저장시 줄바꿈 후 하는게 좋다 
+
+커밋메세지는 개발자에게는 매우 중요한 의사소통수단이 됨
+
+코드할줄을 수정할 때도 아주 긴 커밋메시지를 남기기도함
+커밋멧시지 제목(mm:allow~) 내용(~~)
+
+
+tracked (관리대상) 파일과 untracked(관리대상아님)파일
+
+물음표 모양의 아이콘은 깃이 기존에 변경사항을 추적하지 않았던 새로운 파일 ( 보기 - 파일확장명 보고 .text지우고 gitignore만 쓰기)
+.gitignore.txt 파일을 만든 후 .txt를 지우고 거기안에 자료 입력
+    ex >  e.txt를 gitignore 파일에 입력 후 같은공간에 e.txt 파일을 생성해도 소스트리 (파일상태 > 스테이지에 올라가지않은 파일)에는 보이지 않아야함
+폴더로도 관리 가능
+
+다음줄에 ignore/ 라고 작성(한줄에 하나만 작성 가능)
+/ 는 보통 폴더 
+ignore/e.txt >>. 는 이그너 폴더안에 e.txt 파일으 무시해라라는 의미
+" .gitignore" 파일 
+                
+
+태그 활용 : 
+태그를 붙여 릴리스하기
+1.1.1 버전 같이 붙여서 보기 편하게
+
+
+버전 비교하기
+커밋된 버전끼리 비교하기 ----- 
+직전버전과 비교함 
+
+첫번째커밋과 다섯번째커밋 차이는 뭔데?
+오른쪽 클릭 > 선택한버전열기 ( 왼쪽 아래칸에 오른쪽클릭해야함)
+
+버전끼리 비교  ->4번째가 2번재에 뭐가 달라졌는지 확인은 2를 클릭후 ctrl +4클릭 왼쪽하단 test.txt 클릭하면 오른쪽화면에 삭제된거와 추가된거를 확인가능
+작업되돌기기 ..>> 
+1. 스테이지로 올리지 않은 변경된 파일을 취소하려면 어떻게 해야할까 .???  - 하여 스테이지에서 내려서 취소 
+                    파일변경사항폐기 - 변경사항 폐기(스테이지에올라가지않은파일 에서 사라짐)
+                    "?" 가 뜬 파일은 폐기가 아니라 제거 이다(기존에 저장된 커밋이 없기때문에)
+2. 스테이지에 올라간거 취소 ?? 
+                커밋되어진 내용 버전 되돌리기 : revert는 버전을 되돌리되 , 되돌아간 파일을 복사하고 기존버전은 삭제하지않고 남겨둔다
+                reset : 되돌아갈 버전 이후의 버전은 삭제된다 (모두다) 
+                (잘못된 커밋일 경우는 리셋 , 되돌아갈경우는 리저트)
+
+        reset의 종류
+            1. soft  : 커밋된 하나만 삭제하고 싶을 때 (커밋된것도 유지하고 싶을 때) , 커밋만되돌리기
+            2. mixed : 스테이지까지 되돌리기
+            3. hard  : 작업 디렉터리 내 변경 사항까지 통째로 되돌리는 것 ,, 작업디렉터리까지 되돌리기
+    
+    
+    두번재 커밋으로 리셋하려면 2번째 커밋을 오른쪽 클릭후  "현재 브랜치를 초기화를 누름"
+
+3. stash 스태시 (임시저장)
+
+스태시는 임시저장 
+A, B ,C , D 가있을경우 
+B를 작업하고 있엇는데 
+기존에 ABC는 유지하고 D만 먼저 변경해달라할경우 위의 B 변경사항을 스태시로 임시저장하고
+ABC가 맨처음상태로 D를 작업한 후 커밋한다음 스태시한 B를 다시 가져와서 변경가능
+스태시 저장번호는 가장 최근에 한게 0번으로 들어감 밀어내기 방식 -헷갈리면 안됨
+
+
+
