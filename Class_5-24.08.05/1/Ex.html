@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      // 1. 몇줄을 할 것인가
+      // 2. 별을 몇개 만들 것인가.
+      // 3.  공백은 몇개 넣을것인가
+// 역순 피라미드 다시 생각해서 코드 다시 해보기 
+      let output = ''
+
+      for(let i = 0 ; i< 15; i++){
+         for(let k = 0; k < i; k++){
+        output += ' '
+      }
+        for(let j = 30; j > 2*i+1; j-- ){
+              output += '*'
+        }
+       output+='\n'
+      }
+      
+       console.log(output)
+
+     
+
+     
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

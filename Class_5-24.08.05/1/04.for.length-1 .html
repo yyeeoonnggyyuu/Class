@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      
+      const todos = ['우유구매','업무 메일 확인하기','필라테스 수업']
+   
+
+      // 기본양식
+  //  for (let i = 0; i<todos.length;i++)
+  //     console.log(`${i}번째의 할 일 : ${todos[i]}`)
+
+
+  // 배열을 반대로 하기는 let i 를 배열의 끝에서 -1 (todos.length-1 로 설정해주고 
+  // i는 0보다 작거나 같다라고 설정 후 i-- 로 표현해주면 뒤에서부터 차례대로 출력됨)
+      
+  for(let i = todos.length-1; i>=0 ; i--){
+        console.log(`${i}번째의 할 일 : ${todos[i]}`)
+      }
+
+    </script>
+
+</head>
+<body>
+  
+</body>
+</html>

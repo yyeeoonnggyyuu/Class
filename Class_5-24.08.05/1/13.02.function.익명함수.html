@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    
+            //함수를 선언합니다.
+       function callThreeeTimes (callback){
+        for (let i =0 ; i<3; i++){
+            callback(i) // callback 이라는 매개변수는 함수이므로 호출할 수 있음
+        }
+       }
+
+    //    function print(i){
+    //     console.log(`${i}번째 함수 호출`)
+    //    }
+    //     //    함수를 호출합니다
+    //     callThreeeTimes(print)
+    //  그전이랑 똑같은 출력 값이 나오지만 아래 익명함수를 사용하여 코드가 더 간단하게 바뀜
+       //callThreeeTimes(print) print 에 function(i){console.log(`${i}번째 함수 호출`)} 이거를 넣어서 출력 함 
+       // 비교해보기!!
+    
+    
+        //    함수를 호출합니다
+        callThreeeTimes(function(i){
+            console.log(`${i}번째 함수 호출`)
+        })
+
+    
+      
+    </script>
+
+</head>
+<body>
+  
+</body>
+</html>

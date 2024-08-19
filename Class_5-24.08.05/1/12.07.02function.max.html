@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function max(array){
+            let output = array[0]
+            for (const item of array){
+                if (output < item){
+                    output = item
+                }
+            }
+            return output
+        }
+
+        const testArray = [50, 65, 89, 12, 53, 2, 57 ]
+        console.log(`${testArray}중에서`)
+        console.log(`최대값 = ${max(testArray)}`)
+
+        
+        // 최소에서 두번째 나최대에서 두번째 찾아보기
+
+    </script>
+</head>
+<body>
+  
+</body>
+</html>
