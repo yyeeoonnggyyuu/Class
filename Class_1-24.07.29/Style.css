@@ -1,0 +1,25 @@
+h1{
+    color: white;
+    background: red;
+}
+h2{
+    color: black;(172, 95, 95);
+    background: blue;(109, 102, 170);
+}
+h3{
+    color: rgb(139, 218, 201);
+    background: black;
+}
+h4{
+    color: rgb(58, 137, 168);
+    background: rgb(0, 60, 255);
+}
+h5{
+    color: white;
+    background: rgb(32, 6, 6);
+}
+h6{
+    color: rgb(0, 0, 0);
+    background: rgb(150, 150, 150);
+}
+

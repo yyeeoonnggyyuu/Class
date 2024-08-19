@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <audio src="Kalimba.mp3" controls="controls"></audio>
+
+    <!-- 웹 브라우저 제약이 없도록 음악삽입하기
+     웹 브라우저마다 지원하는 파일 확장자가 다른 문제는 audio, video 태그
+      내부에 source 태그를 입력해 해결 -->
+
+    <audio controls="controls">
+        <source src="Kalimba.mp3" type="audio/mp3">
+        <source src="Kalimaba.ogg" type="audio.ogg">
+    </audio>
+
+    <video coontrols="controls">
+        <source src="Wildlife.mp4" type="video/mp3">
+        <source src="Wildlife.webm" type="video/webm">
+    </video>
+</body>
+</html>
