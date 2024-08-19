@@ -1,0 +1,138 @@
+
+
+
+/* 초기화 */
+ * {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", roboto, "Helvetica Neue", Arial, sans-serif; /*띄어쓰기하면안된다  띄어쓰기하려면 " " 로 감싸준다 마지막에 Arial, sans-serif; 를 넣어주는게 국룰*/
+}
+
+a {text-decoration: none;}
+img {border: 0;}
+li {list-style: none;}
+
+/* 공통구성 */
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* margin : 0 auto; 
+padding: 0 auto; 
+로 가능*/
+/* 헤더구성 */
+
+#main-header {
+    padding: 10px 5px;
+}
+
+#main-header h1 {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 27px;
+    color: #222;
+}
+
+#main-header ul {
+/* margin : 20 0 10 0 ; 으로 해도됨 */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#main-header li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#main-header li a {
+    color: #555;
+}
+
+#mail-header li.acrive a {
+    color: black;
+    font-weight: 500;
+}
+
+#main-header label {
+    text-align: center;
+    float: right;
+    width: 40px;
+    height: 27px;
+    line-height: 27px;
+    color: #222;
+    border: 1px solid #222;
+    border-radius: 5px;
+}
+
+#checkbox {
+    display: none;
+}
+
+#checkbox+nav { /*block으로 걸어줘야 한칸내려감*/
+    display: block;
+}
+
+#checkbox:checked+nav { /* 체크박스가 체크드 상태일 때 업애라*/
+    display: none;
+}
+
+/* 본문과 푸터 */
+#main-content {
+    background: #00afa0;
+    padding: 40px 15px 30px;
+}
+
+#main-content h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 500;
+}
+
+#main-content p {
+    color: #222;
+    text-align: center;
+    color: white; 
+    /* 여기서 color가 두가지인데 일단 마지막 white가 적용되며 추후에 색깔구분하여 더 이쁜걸 씀*/
+} /* 심플한게 좋다*/
+
+#sub-content {
+    padding-top: 30px;
+}
+
+#sub-content h1 {
+    text-align: center;
+    color: #333;
+}
+
+#sub-content h2 {
+    text-align: center;
+    color: #333;
+    font-size: 17px;
+}
+
+#sub-content p {
+    color: #555;
+}
+/* 밑으로 갈수록 rgb 값을 높이는게 좋다  회색에 가깝게 
+모든게 검은색이면 보기 안좋다*/
+
+#sub-content img {
+    width: 200px;
+    display: block; /* 이미지는 기본적으로 inline 값이라 block 을 줘야 중간에 단독으로 있음*/
+    margin: 10px auto;
+}
+
+#main-footer {
+    padding-top: 40px;
+}/*너무 붙어있으면 이상하니 40px 준거*/
+
+footer {
+    background: #323232;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+}

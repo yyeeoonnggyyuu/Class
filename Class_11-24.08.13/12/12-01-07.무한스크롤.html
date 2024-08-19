@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <script>
+        //이벤트를 연결합니다/.
+            $(document).ready(function () {
+                //문서 객체 추가 함수
+                let appendDocument = function (){
+                    for (let i = 0; i<20; i++){
+                        //문서객체를 생성
+                        $('<h1>Infinity Scroll</h1>').appendTo('body');
+                    }
+                };
+
+                //초기 문서 객체를추가합니다
+                appendDocument();
+
+                //이벤트를 연결합니다
+
+                $(window).scroll(function (){
+                    //변수 선언
+                    let scrollHeight = $(window).scrollTop() + $(window).height();
+                    let documentHeight = $(document).height();
+
+                    //검사
+                    // if(scrollHeight == documentHeight){
+                    //     appendDocument();
+                    // }
+ //   위의코드는 해상도 변경시 스크롤 작동이 안됨
+                    //검사
+                    if(scrollHeight + 50 >= documentHeight){
+                        appendDocument();
+                    }
+                })
+            });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

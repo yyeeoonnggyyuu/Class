@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+1. 매일 1000원씩 100일가 넣는다
+기본 금리는 2프로다
+매일 0.1프로씩 오르단
+매일이자는 365 나눈값이 더해진다
+
+        let money = 1000;
+        let sum = 0;
+        let firstinterest = 2;
+        let interest = 0.1;
+        let suminterest = 0;
+        let input=''
+
+        for(let i =1; i<=100; i++){
+            money += 1000;
+            interest += firstinterest + interest
+            suminterest += firstinterest + interest
+            sum = money + (money * (firstinterest + interest));
+            interest += 0.1;
+            console.log(interest)
+        }
+        
+    </script>
+</head>
+<body>
+    
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <script>
+        //이벤트를 연결합니다/.
+            $(document).ready(function () {
+                for (let i = 0; i < 10; i++) {
+                    //문서객체를 생성합니다.
+
+                    $('<h1>Create Document Object + ' + i + '</h1>').css({
+                        backgroundColor: 'black',
+                        color: 'red'
+                    }).appendTo('body') // appendTo : 객체를 대상의 뒷부분에 추가
+                    // prependTo :객체를 대상의 앞부분에 추가
+                    // beforeTo : 객체를 대상의 앞쪽에 추가
+                    // afterTo : 객체를 대상의 뒤쪽에 추가
+                }
+            });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
