@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+              .box {
+            width:100px; height: 100px;
+            position: absolute;
+        }
+        .box:nth-child(1) { 
+            background-color: red;
+            left: 10px; top: 10px;
+            /* 왼쪽으로부터 10픽셀 위쪽으로붙터 10픽셀 이라는 의미 */
+        }
+        .box:nth-child(2) { 
+            background-color: green;
+            left: 50px; top: 50px;
+        }
+        .box:nth-child(3) { 
+            background-color: blue;
+            left: 90px; top: 90px;
+        }
+        /* 왼쪽 탑으로 조정해서 위치 조정 */
+    </style>
+
+</head>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>

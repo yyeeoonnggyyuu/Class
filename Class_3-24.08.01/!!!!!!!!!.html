@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+         
+        .ellipsis{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        body {
+            width: 500px;
+            height: 500px;
+            margin: 10px auto;
+        }
+        #top { background-color: green;}
+        #middle {overflow: hidden;}
+        #left {width: 100px; margin: 10px; float: left; background: blue;}
+        #center {width: 100px; margin: 10px; float: left; background: purple;}
+        #right {width: 100px; margin: 10px; float: left; background: yellow;}
+
+        #bottom {background: pink;}
+        
+        /* #middle {display: flex;}
+        #left {width: 150px; background: red;}
+        #right {width: 350px; background: blue;}
+        display : flex로 middle 값을 맞춰 주었기 때문에 중간의 layout이 무너지지 않음
+        layout 04 파일 이용해서 레이아웃 다시 나눠 보기 =----------display 이용해서 margin 값 넣지말고 안무너지게 해보기------------------------*/
+        
+    </style>
+</head>
+<body>
+
+    <div id="top" class="ellipsis">최고의 CSS 그라디언트 에디터는 Alex Sirota에 의해 만들어졌습니다. 이 도구를 좋아하신다면, 더 고급 도구들을 제공하는 ColorZilla를 확인해 보세요.</div>
+    <div id="middle" class="ellipsis">
+        <div id="left" class="ellipsis">최고의 CSS 그라디언트 에디터는 에 의해 만들어졌습니다. 최고의 CSS 그라디언트 에디터는 Alex Sirota에 의해 만들어졌습니다. </div>
+        <div id="center" class="ellipsis">최고의 CSS 그라디언트 에디터는 에 의해 만들어졌습니다.최고의 CSS 그라디언트 에디터는 Alex Sirota에 의해 만들어졌습니다. </div>
+        <div id="center" class="ellipsis">최고의 CSS 그라디언트 에디터는 에 의해 만들어졌습니다.최고의 CSS 그라디언트 에디터는 Alex Sirota에 의해 만들어졌습니다. </div>
+        <div id="right" class="ellipsis">최고의 CSS 그라디언트 에디터는 에 의해 만들어졌습니다. 최고의 CSS 그라디언트 에디터는 Alex Sirota에 의해 만들어졌습니다. </div>  
+    </div>
+ <div id="bottom" class="ellipsis">최고의 CSS 그라디언트 에디터는 Alex Sirota에 의해 만들어졌습니다. 이 도구를 좋아하신다면, 더 고급 도구들을 제공하는 ColorZilla를 확인해 보세요.</div>
+
+</body>
+</html>

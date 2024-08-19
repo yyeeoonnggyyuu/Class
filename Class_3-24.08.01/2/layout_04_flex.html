@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      
+        body{
+            width: 500px;
+            margin: 10px auto;
+        }
+        
+        
+        #middle {display: flex;}
+        #left {width: 150px; background: red;}
+        #right {width: 350px; background: blue;}
+        /* display : flex로 middle 값을 맞춰 주었기 때문에 중간의 layout이 무너지지 않음 */
+        
+        #top {background: green;}
+        #bottom { background: purple;}
+
+      
+    </style>
+
+
+
+</head>
+<body>
+    <div id="top">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </div>
+    <div id="middle">
+    <div id="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit,  </div>
+    <div id="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, </div>
+    </div>
+    <div id="bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+</body>
+</html>

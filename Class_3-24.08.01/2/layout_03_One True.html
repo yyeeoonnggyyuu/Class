@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       /* 행 3개로 구분하려면 공간을 3개로 나눔  
+        */
+
+        body{
+            width: 500px;
+            margin: 10px auto;
+        }
+        /* 화면 중앙으로 정렬 */
+
+        #top {background: green;}
+        #middle {overflow: hidden;}
+        #left {float: left; width: 150px; background: red;}
+        #right {float: right; width: 300px; background: blue;}
+    
+        #bottom { background: purple;}
+
+        /* 중간중간 선을 통일 시키는게 이쁘다. */
+    </style>
+
+
+
+</head>
+<body>
+    <div id="top">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </div>
+    <div id="middle">
+    <div id="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit,  </div>
+    <div id="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </div>
+    </div>
+    <div id="bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+</body>
+</html>
