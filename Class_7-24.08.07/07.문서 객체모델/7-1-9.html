@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+      // 스타일 조작하기
+      // 25개의 div태그를 조작해서 검은색에서 흰색으로 변화하는 그레이디언트를 만드는 코드만들기
+
+
+      document.addEventListener('DOMContentLoaded',()=>{
+        const divs = document.querySelectorAll('body > div') //body태그 아래에있는 div 태그를 선택
+
+        divs.forEach((div, index) =>{ //div 개수만큼 반복하여 늘림
+          console.log(div, index)
+          const val = index * 2 // 2를 조정해서 더 효과를 줄 수 있음
+          div.style.height = '10px'
+          div.style.backgroundColor = `rgba(${val},${val},${val})`
+        })
+      })
+
+    </script>
+</head>
+<body> 
+    <div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</body>
+</html>

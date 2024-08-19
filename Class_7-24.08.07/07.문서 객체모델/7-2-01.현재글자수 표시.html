@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+      // 표준 이벤트 모델 :addEventListener()
+      
+      // 키보드 이벤트 
+      // keydown - 키가 눌릴 때 실행, 키보드를 꾹 누르고 있을 때고, 입력될 때도 실행됨
+      // keypress - 키가 입력되었을 때 실행, 하지만 웹 브라우저에 따라서 아시아권의 문자(한국어,일본어,중국어)를 제대로 처리하지 못하는 문제가 있음
+      // keyup - 키보드에서 키가 떨어질 때 실행
+
+      document.addEventListener('DOMContentLoaded',()=>{
+        const textarea = document.querySelector('textarea')
+        const h1 = document.querySelector('h1')
+      
+        textarea.addEventListener('keyup', (event)=>{
+          const length = textarea.value.length  //value 속성으로 입력 양식의 글자를 읽어들일 수 있음
+          h1.textContent= `글자수 : ${length}`
+        })
+      })
+
+    </script>
+   
+</head>
+<body> 
+  <h1>글자수 : 0</h1>
+  <textarea ></textarea>
+</body>
+</html>

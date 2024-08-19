@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+      // 키보드 키 코드 사용하기
+      // code : 입력한 키
+      // keyCode : 입력한 키를 나타내는 키
+      // altkey
+      // ctrlkey
+      // shiftkey
+
+      document.addEventListener('DOMContentLoaded',()=>{
+        
+        const h1 = document.querySelector('h1')
+        const print = (event)=>{
+          let output =''
+          output += `alt : ${event.altKey}<br>` //이벤트가 발생하면 불 값을반환
+          output += `ctrl : ${event.ctrlKey}<br>`
+          output += `shift : ${event.shiftKey}<br>`
+          output += `code : ${typeof(event.code) !== 'undefined' ? event.code : event.keycode} <br>`      // event.code가 있으면 event.code를 출력하고 undefined라면 event.keyCode를 출력
+          h1.innerHTML = output  
+         }
+        
+         document.addEventListener('keydown', print) //키가 눌릴 때 출력
+         document.addEventListener('keyup', print) //키가 떨어질 때 출력
+      })
+
+    </script>
+   
+</head>
+<body> 
+  <h1></h1>
+</body>
+</html>

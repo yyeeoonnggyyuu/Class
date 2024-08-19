@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      // 이벤트 발생객체
+      // 문제해결 방법
+      // 1.eent.currentTarget 속성을 사용
+      // 2.this 키워드를 사용
+
+
+      // 입력양식을 기반으로 inch 를 cm단위로 변환하는프로그램
+
+      document.addEventListener('DOMContentLoaded',()=>{
+        const input = document.querySelector('input')
+        const button = document.querySelector('button')
+        const p = document.querySelector('p')
+
+        button.addEventListener('click',()=>{
+          //입력을 숫자로 변환합니다.
+          const inch = Number(input.value)
+          //숫자가 아니라면 바로 리턴합니다.
+          if(isNaN(inch)){
+            p.textContent='숫자를 입력해주세요'
+            return
+          }
+          //변환해서 출력합니다
+          const cm = inch* 2.54
+          p.textContent = `${cm}cm`
+        })
+      })
+
+
+    </script>
+   
+</head>
+<body> 
+  <input type="text">inch<br>
+  <button>계산</button>
+  <p ></p>
+</body>
+</html>
