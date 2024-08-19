@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // private 속성사용하기
+        
+    // #을 붙이면 private 속성으로 바뀜 -
+
+        class Square{
+
+            #length // 이 위체에 해당 속성을 private 속성으로 사용하겠다고 미리선언
+
+        constructor(length){
+            if(length<=0){
+                throw'길이는 0보다 커야 합니다 .' 
+            }
+            this.#length = length  //#length 로 바꿔줘야함
+        }
+        getPerimeter(){ return 4* this.#length} //#length 로 바꿔줘야함
+        getArea(){ return this.#length*this.#length}  //#length 로 바꿔줘야함
+
+        }
+        
+    const square = new Square(10) // 아직 음수를 넣었을 경우 throw가 실행됨 이것을 음수를 넣어도 출력되게 하려고 # private 속성을 사용하는 것
+        square.length = -10  //클래스 내부의 length 속성을 사용하여 변경
+          // #length를 사용했을경우 경고문이 뜸 (Uncaught SyntaxError: Private field '#length' must be declared in an enclosing class) 실행조차안됨 (SyntaxError)
+    console.log(`정사각형의 둘레:${square.getPerimeter()}`)
+    console.log(`정사각형의 넓이:${square.getArea()}`)
+
+
+    </script>
+
+  
+</head>
+<body>
+    
+</body>
+</html>

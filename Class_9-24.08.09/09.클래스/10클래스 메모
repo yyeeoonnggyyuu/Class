@@ -1,0 +1,22 @@
+
+
+불필요한 값을 만들지 않는다.
+필요한 것만 들어서 올리는게 추상화
+실수가 적어진다!
+
+상속
+
+class xxx extends 변수이름 {
+    constructor(){
+        super()
+    }
+} 
+
+Ex
+class Square extends Rectangle {
+            constructor (length){
+                super(length, length)
+            }
+        }
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Square{
+          #length // private속성이되어 constructor 생성자를 읽지 않고 넘어감
+            constructor(length){
+                this.length=length
+            }
+       
+        get length(){ 
+            return this.#length
+        }
+        get perimeter(){
+            return this.#length *4
+        }   
+        get area (){
+            return this.#length *this.#length 
+        }
+        set length (length){
+            if ( length <= 0){
+                throw '길이는 0보다 커야 합니다,'
+            }
+            this.#length = length //이건 또 왜??? 설정해준거여 ? 이건 set을 다시 해준거!!!
+        }
+     }
+
+     const squareA = new Square(-10)  // 음수가 되면 set length가 출력됨
+     console.log(`한 변의 길이 : ${squareA.length}`) // length 라는게 class length를 읽어야하지만 #length로 인해 private속성이되어 읽지 못하고 다음 get length를 읽어 출력됨
+     console.log(`둘레: ${squareA.perimeter}`) // perimeter 라는게 class length를 읽어야하지만 #length로 인해 private속성이되어 읽지 못하고 다음 get perimeter를 읽어 출력됨
+     console.log(`넓이: ${squareA.area}`) // area 라는게 class length를 읽어야하지만 #length로 인해 private속성이되어 읽지 못하고 다음 get area를 읽어 출력됨
+    </script>
+
+  
+</head>
+<body>
+    
+</body>
+</html>
