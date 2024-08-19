@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+   시맨틱(semantic) 웹: 컴퓨터 프로그램이 코드를 읽고 의미를 인식할 수 있는 지능형 웹 (외우기)
+   시맨틱 태그 : 웹페이지의 태그에 의미를 부여하는 태그
+
+   시맨틱 웹은 왜 필요한가 -- 우리는 광고 검색 메일 등등 인식가능
+                            컴퓨터는 인식 불가 코드로 입력해줘야함
+                            
+        div 에 넣어보자
+
+        header - 머리말(페이지제목, 페이지소개)
+        nav - 하이퍼링크들을 모아 둔 내비게이션
+        aside - 본문흐름에 벗어나는 노트나 팁
+        section- 문서의 장이나 절에 해당하는 내용
+        acrticle - 본문과 독립적인 콘텐츠 영역
+        footer - 꼬리말 ( 저자나 저작권 정보)
+
+
+        section 과 acricle 은 어떤거를 주제로 잡냐에 따라 달라짐 
+        네이버는 판매가 acricle 이지만 11번가는 section일수 있다
+        
+        프로젝트 할 때 시맨틱 태그를 고민해야함 !!
+        
+        나는 시맨트 태그를 설명 할 수 있는가 ?? 고민-->
+
+
+        <!-- div 를 사용한 Ex -->
+        <table border="1">
+            <div>
+                <h1>HTML5 기본</h1>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">메뉴 - 1</a></li>
+                    <li><a href="#">메뉴 - 2</a></li>
+                    <li><a href="#">메뉴 - 3</a></li>
+                </ul>
+            </div>
+            <div>
+                <div>
+                    <h1>자료1</h1>
+                    <p>자료 1-1</p>
+                </div>
+                <div>
+                    <h1>자료2</h1>
+                    <p>자료 2-2</p>
+                </div>
+                <div>
+                    <span>서울특별시 강서구 내발산동</span>
+                </div>
+            </div>
+            <br>
+        </table>
+        
+<!-- --------------시맨틱 태그를 사용한 예시 -- 사람이 확인하기 편하게 만들었다------
+  정의 시맨틱 태그를 사용해 각 태그에 의미를 부여하여 가독성 up ----------------- -->
+        <header>
+            <h1>HTML5 기본</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">메뉴 - 1</a></li>
+                <li><a href="#">메뉴 - 2</a></li>
+                <li><a href="#">메뉴 - 3</a></li>
+            </ul>
+        </nav>
+        <section>
+            <article>
+                <h1>자료1</h1>
+                <p>자료 1-1</p>
+            </article>
+            <article>
+                <h1>자료2</h1>
+                <p>자료 2-2</p>
+            </article>
+            <footer>
+                <span>서울특별시 강서구 내발산동</span>
+            </footer>
+        </section>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* 나는 첫째줄만 빨간색으로 하고 싶어의 답은 a 태그를 다 가리키기 때문에 
+        li > a:first-child {color: red;} 이거를
+        li:first-child >a {color: red;} 로 바꿔야 한다 
+        li의 퍼스트 자식인 a만 레드로 표현
+         */
+         li:first-child >a {color: red;}
+    </style>
+
+</head>
+<body>
+   <Ul>
+    <li><a href="#">첫 번째</a></li>
+    <li><a href="#">두 번째</a></li>
+    <li><a href="#">세 번째</a></li>
+    <li><a href="#">네 번째</a></li>
+    <li><a href="#">다섯 번째</a></li>
+    <li><a href="#">여섯 번째</a></li>
+  
+   </Ul>
+</body>
+</html>

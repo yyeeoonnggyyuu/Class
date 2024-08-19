@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+         /* table > tr> th 만 했을경우는 tbody가 자손으로 적용이 안됨 
+         그래서 table 과 tr 사이에 tbody를 넣어 줘야 자손으로 인정 */
+      table > tbody> tr > th {
+         color: red;
+      }
+    </style>
+
+</head>
+<body>
+   <table border="1">
+
+      <!-- tbody 중요 tbody가 ㅇ없을경우 
+       표시는 안되지만 thead가 자동으로 생성되어 레드를 인식을 안함 
+       그러므로 tbody 생성우 stlye에 table과 tr 사이에 tbody 넣어줘야함-->
+      <tbody>
+         <tr>
+            <th>이름</th>
+            <th>지역</th>
+         </tr>
+      <tr>
+         <td>윤인성</td>
+         <td>서울특별시 강서구 내발산동</td>
+      </tr>
+     </tbody>
+   </table>
+</body>
+</html>

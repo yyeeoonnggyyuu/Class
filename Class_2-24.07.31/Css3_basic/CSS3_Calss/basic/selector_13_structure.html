@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 구조 선택자 : 특정한 위치에 있는 태그를 선택
+        :first-child - 형제관계에서 첫번째 
+        :last-child -형제관계에서 마지막
+        :nth-child(수열)
+        :nth-last-child(수열) */
+
+        ul {overflow : hidden;}
+        li {
+            list-style: none;
+            float: left; padding: 15px;
+        } 
+        /* 첫번째 둥글게 다음꺼는 마지막 둥글게  */
+        li:first-child {border-radius: 10px 0 0 10px;}
+        li:last-child {border-radius: 0 10px 10px 0;}
+
+        /* 홀수는 갈색으로 백그라운드 표현 짝수는 레드로 표현
+        3개는 3n 3n+1 3n+2 로 조정
+        4개는 4n 4n+1 4n+2 로 조정 */
+        li:nth-child(2n) {background-color: #FF0003;}
+        li:nth-child(2n+1){background-color: #800000;}
+
+
+        </style>
+
+</head>
+<body>
+   <Ul>
+    <li>첫 번째</li>
+    <li>두 번째</li>
+    <li>세 번째</li>
+    <li>네 번째</li>
+    <li>다섯 번째</li>
+    <li>여섯 번째</li>
+   </Ul>
+</body>
+</html>
