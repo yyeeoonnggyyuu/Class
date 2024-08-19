@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* id가 box인 것을 찾아 적용함 */
+        *{
+            margin : 0 auto;
+            padding: 0;
+        }
+        .box { 
+    
+            width: 100px; height: 100px;
+            margin: 20px;
+            padding: 30px;
+            background-color: red;
+            }
+        .box.hover { /* hover 는 마우스 커서가 올라갔을 때 변해야함 */
+            background-color: blue;
+            border-radius: 50px;
+        }
+    </style>
+     <script  src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <script>
+        $(document).ready(function(){
+            $('.box').hover(function(){ // box에 hover(마우스 커버)가 올렸을 경우
+                //스타일 변경
+                $('.box').addClass('hover'); //  addclasss(hover) 시켜라
+            }, function(){ // 마우스 커버가 안올라갔을 경우
+                //스타일 변경
+                $('.box').removeClass('hover'); //removeClass가 적용됨
+            });
+
+            $('h1').hover(function(){
+                $(this).css({
+                    background: 'red',
+                    color: 'white'
+                });
+            }, function(){
+                $(this).css({
+                    background: '',
+                    color: ''
+                });
+            })
+// 이거를 확인 누르면 이동하고 취소 누르면 이동 안하게 하고 싶음
+            $('a').click(function(event){
+                let result = confirm('네이버 사이트로 이동하시겠습니까?')
+            if (result == true){
+              alert('이동합니다.')
+            }else {
+       
+              alert('취소합니다');
+              event.preventDefault();
+            }
+            })
+        });
+    </script>
+
+</head>
+<body>
+    <p class="box"></p>
+    <p class="box"></p>
+    <p class="box"></p>
+    <p class="box"></p>
+   
+    <h1>Click</h1>
+
+    <a href="http://www.naver.com">네이버</a>
+</body>
+</html>

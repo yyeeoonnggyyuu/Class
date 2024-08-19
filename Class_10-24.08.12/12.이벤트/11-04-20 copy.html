@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+  <script>
+
+    $(document).ready(function () {
+      $('button').click(function () {
+        $('.page').fadeToggle('slow'); // slow (600밀리초 속도), noraml(500밀리초 속도), fast(400밀리초 속도) 
+      });
+    });
+
+  </script>
+</head>
+
+<body>
+  <button>Toggle Show</button>
+  <div class="page">
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius mattis turpis sollicitudin efficitur.
+      Praesent euismod aliquam magna. Nunc scelerisque risus sed metus rhoncus, a imperdiet justo feugiat. Curabitur
+      sodales nisi vitae magna tincidunt mattis.</p>
+  </div>
+</body>
+
+</html>

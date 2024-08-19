@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <script>
+       //css(메서드)
+
+
+        $(document).ready (function(){
+            // # 은 아이디 . 은 클래스 찾아감
+
+            //스타일을 적용
+            $('.box').css('float','left');
+            $('.box').css('margin',10);
+            $('.box').css('width',100);
+            $('.box').css('height',100);
+            $('.box').css('backgroundColor','pink');
+             });
+
+        //사실 jQuery 여러개를 저장하면 객체로 저장함 < 어려운 부분! (딥하게 공부하려면)
+    </script>
+
+</head>
+<body>
+    <div class="box"></div> <!-- -->
+    <div class="box"></div>
+    <div class="box"></div>
+    
+</body>
+</html>

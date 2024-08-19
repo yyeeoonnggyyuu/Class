@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+
+    <style>
+        /* id가 box인 것을 찾아 적용함 */
+        #box { 
+            width: 100px; height: 100px;
+            background-color: red;
+            }
+        #box.hover { /* hover 는 마우스 커서가 올라갔을 때 변해야함 */
+            background-color: blue;
+            border-radius: 50px;
+        }
+    </style>
+     <script  src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <script>
+        $(document).ready(function(){
+            $('#box').hover(function(){ // box에 hover(마우스 커버)가 올렸을 경우
+                //스타일 변경
+                $('#box').addClass('hover'); //  addclasss(hover) 시켜라
+            }, function(){ // 마우스 커버가 안올라갔을 경우
+                //스타일 변경
+                $('#box').removeClass('hover'); //removeClass가 적용됨
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+    <div id="box"></div>
+    <!--  id 하나만 쓸경우는 # 으로 지정 그러나 여러가지를 쓰고 싶을 때 class . 을 써야함-->
+</body>
+</html>

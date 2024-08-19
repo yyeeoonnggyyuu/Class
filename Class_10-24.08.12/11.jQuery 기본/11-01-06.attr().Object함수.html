@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <script>
+        //이벤트 연결
+        // $(document).ready(function(){ 
+        //     //속성 지정
+        //     $('img').attr('alt','jQuery 라이브러리를 사용한 속성 지정'); //이미지가 없을때 나오는 멘트
+        //     $('img').attr('src','http://via.placeholder.com//100x100');
+        //     $('img').attr('width','100');
+        // });
+// ------------------------------------
+// 위를 아래로 간단하게 가능
+        $(document).ready(function(){
+
+            $('img').attr({
+                alt: 'jQuery 라이브러리를 사용한 속성 지정',
+                //src 값에 함수를 넣어 width 값을 변경
+
+                src: function(index){
+                    //변수 선언
+                    let size = (index +1) *100;
+
+                    //매개변수가 index로 지정해서 키값이 정해짐? 
+                    
+                    //반환
+                    return 'http://via.placeholder.com/'+size +'x100';
+                }
+            });
+        })
+       
+        
+                //배열을배웠음 변수(하나저장) 배열 (여러개 저장) 
+                //변수의 한계는 하나만 지정가능 
+                //그래서 배열을 쓴다. 
+                //
+
+    </script>
+
+</head>
+<body>
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+
+</body>
+</html>

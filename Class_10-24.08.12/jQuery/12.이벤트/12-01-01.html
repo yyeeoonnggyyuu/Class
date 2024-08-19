@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+
+    <script>
+
+        // $(document).ready(function(){
+                    // .실행문 (함수)   (이벤트객체)
+        // })
+
+
+        $(document).ready(function(){
+            //이벤트를 연결합니다.
+            $('h1').click(function(){
+                alert('클릭!'); // body의 h1. click을 클릭해야 경고창이 뜸
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Click</h1>
+</body>
+</html>

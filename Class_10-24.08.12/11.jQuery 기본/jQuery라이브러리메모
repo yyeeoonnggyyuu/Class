@@ -1,0 +1,22 @@
+
+
+
+
+모든 웹 브라우저에 호환이 잘 됨 
+jQuery 라이브러리 설정
+
+- 파일을 다운로드해 외부 자바스크립트 파일로 추가
+
+<script  src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <script>
+        $(document).ready(function(){ 
+
+        })
+    </script>
+
+
+    $(선택자),메서드(매개변수,매개변수)
+
+    3. 문서객체조작
+
+    h1 하나하나를 객체라함
