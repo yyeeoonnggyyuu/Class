@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const $input = document.querySelector('#input');
+        const $form = document.querySelector('#form');
+        const $logs = document.querySelector('#logs');
+// 여기서 배열을 사용할 것인지 객체를 사용할 것인지에 따라서 프로그램 구조가 바뀌기 때문에 상당히 자주 마주치는 질문이다.
+
+// 간단하게 고르는 방법은 단순한 값들의 나열이면 배열을 사용값에 이름이 붙는다면 객체를 사용한다.
+
+// 숫자야구는단순한 값들의 나열이므로배열을 사용한다.
+        const numbers = [];
+        for(let n = 1; n<=9 ; n +=1 ){
+            numbers.push(n)
+        }
+// 코드를 추가해주고 이제 여기서 4개를 뽑아보겠다.
+// answer이라는 배열을 만들고 정답 숫자 4개를 만들기 위해 4번 반복한다.
+// 그리고 Math.floor() 메서드로 0~8의 정수에서  인덱스를 무작위로 뽑는다.
+// numbers[index]로 해당 인덱스에 담긴 실제 숫자를 가져와서 answer 배열에 추가해준다.
+// 뽑은 숫자를 numbers 배열에서 splice() 해준다.
+
+// https://blog.naver.com/tmddnjs3283/223389892177
+        const answer = [];
+        for (let n =0; n<=3 ; n +=1){
+            const index = Math.floor(Math.random()*numbers.length);
+            answer.push(numbers[index])
+            numbers.splice(index,1)
+        }
+        console.log(answer)
+
+    </script>
+</head>
+<body>
+    <form id="form">
+        <input type="text" id="input">
+        <button>확인</button>
+    </form>
+    <div id="logs"></div>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+
+git init: 로컬저장소 만들기
+git init 는 깃 저장소를 만드는 명령
+
+
+내가 열고자 하는 폴더에서 우클릭 (오픈 깃배시히얼 ) 클릭하면
+
+명령어
+cd C:\test -> c드라이브에 있는 test 파일 이동
+pwd        -> 현재 파일 위치
+git init   -> 초기화
+Initialized empty Git repository in 경로  이렇게 뜨면 성공 -> 파일안에 .git 폴더생성되면 됨
+git status  -> 현재 작업 디렉터리의 상태를 알려주는 명령 
+git add 추가할 대상->  스테이지 올리기 (git과 관련된건 무조건 git 써주기)
+git add .    --> 모든파일을 올리는 기능 . 
+git commit : 커밋하기 
+git commit -m "메시지" : 새로운 커밋 남기기  (제목을 남기는 것 간단하게 제목만)
+        $ git commit -m "first commit"  - 새로운커밋남기기
+        [master (root-commit) 1b51b7f] first commit  이 메시지가뜨면 만들어진것
+        1 file changed, 1 insertion(+)
+         create mode 100644 a.txt
+git log : 커밋 목록 출력  우측에 (HEAD -> master) 이건 HEAD에 있는 마스터 브랜치 위치를나타냄
+git commit -am "메시지" : add와 동시에 메시지를 남겨라 (스테이지에 이미 올라와 있거나 한번이라도 커밋한적이 잇는 파일에만 사용할 수 있음 )
+                            (제목을 남기는 것 간단하게 제목만)
+git commit 만 치면 Vim창이 나옴 자세한 커밋메시지를 작성가능  a 또는 i 를 입력하면 하단에 INSERT가 뜸
+            입력모드가 나오는데  vim 창의 맨 윗줄 첫번째줄은 제목
+             그후에 엔터 2번 치고 나서 세번째 줄에 치면 내용
+             커밋메시지와 내용 다 끝나면 esc눌러주면 하단은 INSERT가 없어짐
+        여기서 :write 또는 :w 를 입력한뒤 엔터를 누르면 입력한 내용이 저장
+        :quit 또는 :q 를 입력후 엔터하면 창이 닫힘
+        :wq 를 입력해도 됨 그럼 :w와 :q가 한번에 
+
+        여기서 내용을 다시 수정하려면?? 질문
+
+; log 
+git log --oneline :  단순하게 제목만 보여줌 
+git log --patch : 해당 커밋으로 어떤 파일이 어떻게 수정됐는지를 출력 git log --p 도 가능
+git log --graph : 각 커밋을 그래프의 형태로 출력하는 방법
+git log --branches : 커밋 목록을 조회활 수 있음 모든 브랜치 포함 해서 보여줌 
+git tag v1.0.1 태그: 최근에 커밋한 거에 내가 입력한 태그가 붙음 (v1.0.0 )이런식으로
+git tag 태그 커밋>  : 예시 두번째 git tag <v1.0.1><90b69c8> 여기서커밋은 커밋제목이 아닌 고유 번호 (git log --oneline)여기서 확인 가능
+git tag --list  또는 git tag -l : 태그 리스트만 보여줌 git tag를 해도 되나 git tag d 이런식으로 오타있을결우 최근 커밋에 태그가 붙음
+git tag --delete 또는 git tag -d : 태그 삭제 > git tag v0.0.1 이런식으로
+
+; diff
+git diff : 최근 커밋과 현재 작업 디렉터리 (현재작업내역)의 차이를 출력 
+git diff --staged : 스테이지에 추가된 항목과 최근 커밋의 차이를 보여주는 명령어
+git diff 커밋 커밋 : 커밋끼리의 비교 앞 커밋을 기준으로 뒤에 커밋이 다른점을 보여줌 (여기서 커밋은 커밋의 주소값)
+git diff HEAD^ HEAD 또는 git diff HEAD~1 HEAD : 최신버전과 이전버전을비교해줘 , 세번째 커밋을기준으로 네번째커밋을 비교하기
+
+; reset  : 리셋
+git reset 되돌아갈 커밋 
+    soft 커밋만 되돌
+    mixed 스테이지까지
+    hard 
+git reset --soft 커밋주소 : 커밋만 되돌리기 커밋주소까지만
+        git reset --soft HEAD^ 쓰면 바로 앞 커밋 소프트
+git reset --mixed 커밋주소 : 
+        git reset --mixed HEAD^ 쓰면 바로 앞 커밋 믹시드
+git reset --hard 커밋주소 :  잘못된 작업을 커밋까지 했을경우  
+        git reset --hard HEAD^ 쓰면 바로 앞 커밋 하드
+
+
+; revert
+revert : 새로운 커밋을 하는데 기존버전을남겨놔라
+git revert 취소할 커밋 :  뒤에 취소할 커밋을 명시
+git revert 커밋주소 : 하면 REVERT "커밋제목" 의 창이 뜸 
+   ***주의해야함 ***여기서 주의사항 3번째 커밋 주소를 입력하면 3번째 커밋은 남겨두고 2번째 커밋으로 돌아가는것
+; stash   
+stash 작업시 제목을 잘 남겨야 복잡한 작업시 좋다 
+git stash : 변경사항 임시 저장하기 tracked상태의 파일만 가능
+git stash -m "메시지"  :내가 작업한 내용을 일단 임시저장하고 작업전으로 저장됨
+git stash list : 내가  스태시 남긴 리스트 보기 가장 최근에 남긴게 0 번임
+git stash apply 스태시@{}  : git stash list 로 스태시 주소값을 확인 후 
+                            $ git stash apply stash@{0} 여기 0에 해당 번호 입력 
+                            그 후에 출력된 내용에서(modified:   a.txt 확인)                              
+git stash  drop 스태시  : 
+sit stash clear : 모든 스태시를 삭제
+
+; branch
+git branch : 현재 브랜치 체크아웃을 알려줌
+git branch 브랜치 네임 : git branch foo 일 경우 foo라는 브랜치 생성
+git checkout 브랜치 네임 : 브랜치 해당 브랜치로 체크아웃  Ex >git checkout foo :foo브랜치로 이동
+브랜치 비교 git diff 브랜치네임 브랜치네임   : git diff (master) (foo)  마스터에 비해서 푸에는 d.txt 와 e.txt 가 있다고 뜸
+git checkout -b 브랜치네임 : git checkout -b bar > bar로 생성후 이동 새로운 브랜치를 만들고 바로 checkout하는 명령어
+            -b >>> branch 약자
+; marge
+git merge 브랜치: 브랜치 병합
+        ex > git merge foo -> 현재 체크아웃 인 master브랜치에 foo브랜치를 병합해달라
+
+예시 충돌 상황 
+    KOSTA@DESKTOP-QRGV135 MINGW64 ~/Desktop/ex/.test (master)
+    $ git merge foo  >> 내가입력
+    Auto-merging a.txt
+    CONFLICT (content): Merge conflict in a.txt
+    Automatic merge failed; fix conflicts and then commit the result.
+    KOSTA@DESKTOP-QRGV135 MINGW64 ~/Desktop/ex/.test (master|MERGING) >>> master|MERGING 이 현재 상태
+
+이렇게 메시지가 뜸
+여기서 마스터의 내용을 쓰겠다 
+
+
+git branch -d 브랜치 : 브랜치 삭제하기 여기선 삭제할 브랜치가 체크아웃되어있으면 안되니 master나 main으로 체크아웃 후 삭제
+
+git rebase 브랜치 : 브랜치 재배치 
+
+$ git log --oneline --branches :oneline으로 보여주되 branc들을 모두 보여줘 라는 명령어
+
+git rebase 브랜치 : 3번째 master 브랜치에서 최근 작업하는 master브랜치로 이동하고 싶을 때
+                이럴경우 bar 브랜치로 체크아웃한 뒤 git rebase master 입력하면 됨
+
+git log --oneline --branches --graph :oneline으로 보여주되 branc들을 모두 그래프 형식으로 보여줘라는 명령어
+
+클론 clone  : 깃허브에 있는걸 복제 git clone 복사한URL  이작업시 알아서 폴더를 만들어주기 때문에 잘 확인해야함
+리모트 remote :  원격저장소를 추가하고 조회하고 삭제할 수 있는 명령어
+            작업할 폴더 만들고 그 안에서 git bash 실행 후 git init 입력하면 .git 폴더 생성 
+            첫번째는 로컬저장소와 원격저장소를 연결해야함
+             git remote add 원격저장소이름 원격저장소 경로
+             ex git remote add origin git@github.com:yyeeoonnggyyuu/repository.git 이런식으로
+            git remote 라 쳤을 때 origin 이라고 뜨면 성공 (origin은 내가 지정한 원격저장소이름)
+        git remote -v 또는 git remote --verbose :원격저장소의 이름과 경로를 확인가능
+            상호작용 완료 깃허브와 내 컴퓨터와 
+        git remote rename 원래원격저장소이름 바꿀이름
+        git remote remove 원격저장소이름 : 삭제 후에 git remote 쳤을 때 아무것도 없으면 잘 된것
+
+푸시 push :  git push
+
+        git branch -M 브랜치이름  ->git branch -M main 현재 브랜치 이름을 main으로 바꿔줘
+        git push -u 원격저장소 이름 브랜치이름  >
+                        git push -u origin main : 원격저장소origin에 로컬저장소main 에 변경사항 푸시해줘
+                -u 옵션은 처음할때
+
+                추후에 a.txt에 변동사항이 있을경우엔 git commit -am "메시지" 로 내저장소에 저장후 
+                git push 하면 원격저장소에 바로 저장 (b.txt라는 새로운걸 만들경우엔 git add b.txt를 해줘야함 )
+패치 fetch : git fetch
+풀  pull  :  git pull
+
+
+
+
+
+
+
+
+
