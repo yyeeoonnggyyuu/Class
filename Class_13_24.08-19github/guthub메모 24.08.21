@@ -13,6 +13,7 @@ Initialized empty Git repository in 경로  이렇게 뜨면 성공 -> 파일안
 git status  -> 현재 작업 디렉터리의 상태를 알려주는 명령 
 git add 추가할 대상->  스테이지 올리기 (git과 관련된건 무조건 git 써주기)
 git add .    --> 모든파일을 올리는 기능 . 
+git add src/ --> 폴더단위로 가능
 git commit : 커밋하기 
 git commit -m "메시지" : 새로운 커밋 남기기  (제목을 남기는 것 간단하게 제목만)
         $ git commit -m "first commit"  - 새로운커밋남기기
@@ -132,14 +133,29 @@ git log --oneline --branches --graph :oneline으로 보여주되 branc들을 모
 
                 추후에 a.txt에 변동사항이 있을경우엔 git commit -am "메시지" 로 내저장소에 저장후 
                 git push 하면 원격저장소에 바로 저장 (b.txt라는 새로운걸 만들경우엔 git add b.txt를 해줘야함 )
-패치 fetch : git fetch
-풀  pull  :  git pull
+패치 fetch : git fetch 라고 하면 원격저장소에 저장된 파일을 받을 수 있음 그러나 내 로컬저장소엔 저장안된상태
+        git status : Your branch is behind 'origin/main' by 1 commit  이 메시지는 원격에 commit 메시지가 1개있다는 뜻
+                        $ git diff main origin/main 을 쳐보면 main보다 origin/main에 내가 원격에서 입력한 내용이 있다고 표시됨
+git checkout FETCH_HEAD 명령어로도 체크아웃할 수 있음
+                        최근에 패치한 브랜치의 최신 커밋을가리키기 때문
+                        후에 main 브랜치와 합치고 싶을땐 main브랜치로 checkout 한 후 
+                        $ git merge origin/main 을 치면 원격저장소 origin/main 브랜치를 로컬 저장소의 main브랜치로 병합 
+                         ( git merge origin/main 이거말고 git merge FETCH_HEAD를 사용해도 무방하나 나도모르는사이 새로운 커밋이 올라갈 수 있으니 주의!)
+풀  pull  :  git pull : 패치와 머지를 같이 하는것
+                        git pull 또는 git pull 원격저장소 이름 :
+
+풀 리퀘스트 
+1.기여하려는 저장소를본인 계정으로 포크하기
+2.포크한 저장소를 클론하기
+3.브랜치 생성 후 생성한 브랜치에서 작업하기
+4.작업한 브랜치 푸시하기
+5.풀리퀘스트보내기
 
 
-
-
-
-
+먼저 github 에서 낸 계정으로 상대계정 fork 하기
+그 후에 내 로컬 저장소에 저장 
+git clone 원격저장소주소 > cd 폴더이름/ >> git checkout -b 브랜치이름 하면 브랜치 생성과 체크아웃 동시에
+>> git push origin add_myname 하면 add_myname 브랜치가 원격저장소 origin에 푸시
 
 
 
